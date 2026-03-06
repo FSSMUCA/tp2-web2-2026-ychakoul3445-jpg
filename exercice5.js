@@ -1,0 +1,23 @@
+const nombres = [0, NaN, Infinity, -Infinity, 42, 3.14, Number.MAX_SAFE_INTEGER + 1, -0];
+for(let i = 0 ; i < nombres.length ; i++){
+
+    if (Number.isNaN(nombres[i])) {
+        console.log(nombres[i] + " -> INVALIDE");
+    } 
+    else if (nombres[i] === Infinity || nombres[i] === -Infinity) {
+        console.log(nombres[i] + " -> INFINI");
+    } 
+    else if (1 / nombres[i] === -Infinity) {
+        console.log(nombres[i] + " -> ZERO NEGATIF");
+    } 
+    else if (Number.isInteger(nombres[i]) && Math.abs(nombres[i]) > Number.MAX_SAFE_INTEGER) {
+        console.log(nombres[i] + " -> ENTIER HORS LIMITES");
+    } 
+    else if (Number.isInteger(nombres[i])) {
+        console.log(nombres[i] + " -> ENTIER SUR");
+    } 
+    else {
+        console.log(nombres[i] + " -> DECIMAL");
+    }
+
+}
